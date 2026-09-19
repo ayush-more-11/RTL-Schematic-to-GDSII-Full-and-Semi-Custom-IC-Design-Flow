@@ -460,37 +460,7 @@ For the semi-custom flow specifically, confirm that the library used for synthes
 
 ---
 
-## 11. Verification responsibilities
-
-The repository contains evidence for several different verification questions. They should not be conflated:
-
-| Question | Appropriate evidence |
-|---|---|
-| Does the RTL or schematic behave as intended? | Simulation/testbench results |
-| Does synthesis preserve the intended logic? | LEC inputs/results and netlist review |
-| Is the geometry legal for the technology? | DRC log/result |
-| Does the physical layout represent the intended circuit? | LVS log/result |
-| Does the design meet timing assumptions? | SDC plus timing/slack reports |
-| What are the implementation costs? | Area, power, and gate reports |
-| What physical database is delivered? | Final GDSII file |
-
-A complete signoff decision should consider all applicable checks together.
-
----
-
-## 12. Limitations and interpretation notes
-
-- The repository is a learning/reference archive as well as a collection of generated design artifacts.
-- Exact tool commands and GUI steps may vary with EDA-tool version, PDK release, operating system, and installation path.
-- The synthesis Tcl script references an absolute library path under `/home/install/FOUNDRY/...`; this path is environment-specific.
-- The generated output SDC is tool-produced and should be regenerated when the RTL, library, timing assumptions, or synthesis flow changes.
-- The reports and images describe the recorded run; they should not be assumed to represent a newly rerun implementation unless the flow is executed again.
-- Binary GDSII files require a compatible layout viewer; they cannot be meaningfully reviewed as plain text.
-- The full-custom and semi-custom examples use different abstraction levels and should be compared as complementary flows, not as identical implementations of the same circuit.
-
----
-
-## 13. Summary
+## 11. Summary
 
 This repository is a consolidated reference for moving from design intent to physical IC layout through two complementary approaches:
 
